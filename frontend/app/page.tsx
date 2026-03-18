@@ -36,7 +36,7 @@ export default function Home() {
     };
 
     try {
-      const res = await fetch("http://192.168.1.50:8000/user/login", {
+      const res = await fetch("http://127.0.0.1:8000/user/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
@@ -60,7 +60,7 @@ export default function Home() {
     if (!token) return;
     setLoading(true);
     try {
-      const res = await fetch("http://192.168.1.50:8000/subjects", {
+      const res = await fetch("http://127.0.0.1:8000/subjects", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Failed to load subjects");
@@ -76,7 +76,7 @@ export default function Home() {
   const handleDelete = async (usic: string) => {
     if (!token) return;
     try {
-      const res = await fetch(`http://192.168.1.50:8000/subject/${usic}`, {
+      const res = await fetch(`http://127.0.0.1:8000/subject/${usic}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -99,7 +99,7 @@ export default function Home() {
     }
 
     try {
-      const res = await fetch("http://192.168.1.50:8000/subject/create", {
+      const res = await fetch("http://127.0.0.1:8000/subject/create", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: fd,
