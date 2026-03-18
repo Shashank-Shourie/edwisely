@@ -97,15 +97,15 @@ async def create_subject(
 ):
     print("reached")
     data = {
-        "university": university,
-        "college": college,
-        "academic_year": academic_year,
-        "regulation": regulation,
-        "semester": semester,
-        "branch": branch,
-        "type": type,
-        "name": name
-    }
+    "university": university.strip().lower(),
+    "college": college.strip().lower(),
+    "academic_year": academic_year.strip(),
+    "regulation": regulation.strip().lower(),
+    "semester": int(semester),
+    "branch": branch.strip().lower(),
+    "type": type.strip().lower(),
+    "name": name.strip().lower()
+}
 
     print("reqsetn")
     print(data)
