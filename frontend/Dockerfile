@@ -1,16 +1,16 @@
-FROM node:20-alpine
+FROM node:20
 
 WORKDIR /usr/src/app
 
-# Install dependencies
+# Copy package files and install dependencies
 COPY package.json package-lock.json* ./
-RUN npm ci --silent || npm install --silent
+RUN npm install --no-audit --no-fund
 
-# Copy app
+# Copy rest of the source
 COPY . .
 
 # Expose Next dev port
 EXPOSE 3000
 
-# Start Next in dev mode
+# Start Next in dev mode binding to all interfaces
 CMD ["/bin/sh", "-c", "npm run dev -- --hostname 0.0.0.0"]
