@@ -106,3 +106,8 @@ fastapi dev
 cd ../frontend
 npm run dev
 ```
+
+test user
+
+email:tt@gmail.com
+password:abcd
