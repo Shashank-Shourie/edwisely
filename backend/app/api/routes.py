@@ -113,7 +113,7 @@ async def create_subject(
     usic = generate_usic(data)
 
     # 🔍 Check if subject exists
-    existing = await Subject.find_one(Subject.usic == usic)
+    existing = await Subject.find(Subject.usic == usic).sort(-Subject.version).first_or_none()
 
     # ☁️ Upload file
     file_url = await upload_file(file,usic)
