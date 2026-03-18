@@ -1,0 +1,2 @@
+def generate_usic(data: dict):
+    return f"{data['university']}_{data['college']}_{data['academic_year']}_{data['regulation']}_{data['semester']}_{data['branch']}_{data['type']}_{data['name']}".lower().replace(" ", "_")
