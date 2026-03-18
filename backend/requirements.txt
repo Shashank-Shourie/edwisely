@@ -1,5 +1,14 @@
 fastapi
 uvicorn
-sqlalchemy
+beanie
+motor
 pydantic
 python-dotenv
+python-multipart
+passlib[bcrypt]
+python-jose
+boto3
+pypdf
+python-docx
+requests
+groq
